@@ -10,6 +10,10 @@ app.get("/", (req, res) => {
     res.render("display", { text });
 });
 
+app.get("/new", (req, res) => {
+    res.render("new");
+});
+
 app.listen(process.env.PORT || 3000, () => {
     console.log("Server running on port:" + 3000);
 });
