@@ -24,13 +24,17 @@
         <title>Kyoyu</title>
     </head>
     <body>
+        <%- include("_toolbox.ejs", {id: locals.id}) %>
         <div class="wrapper">
             <div class="line-numbers">
                 <% for(let i=1; i<=text.split("\n").length; ++i) { %>
                 <div><%= i %></div>
                 <%} %>
             </div>
-            <pre><code id="text-display" class="language-plaintext"><%= text %></code></pre>
+            <pre><code 
+                id="text-display" 
+                class="<%= locals.language ? `language-${locals.language}`:"" %>"
+                ><%= text %></code></pre>
         </div>
     </body>
 </html>
